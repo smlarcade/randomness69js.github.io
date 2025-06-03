@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+  <title> Randomness69 World </title>
+  <head>
+   <style>
+     /* title and things and shit*/
+     #windowdiv {
+      border: 6px solid black;
+      border-radius: 2px;
+      padding: 0px;
+      margin: 0px 0;
+     }     
+     #windowdivcont {
+      width: 50%; 
+      position: absolute;
+      max-width: 600px;
+      z-index: 3;
+     }
+     #windowtopcont {
+      margin-bottom: 0px;
+     }
+     #windowtop {
+      background-image: linear-gradient(to right, grey , darkgrey);
+      margin-top: 0px;
+      height: 35px;
+      margin-bottom: 0px;
+      border-style: solid;
+      border-width: 0px 0px 5px 0px;
+     }
+     #wintoptext {
+      font-family: Courier New;
+      color: white;
+      margin-left: 10px;
+      font-size: 20px;
+      padding: 4px 0;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-right: 0px;
+      -webkit-text-stroke: 1px black;
+     }
+     #xbutton {
+      color: black;
+      position: relative;
+      left: 35%;
+      line-height: 25px;
+      margin-bottom: 0px;
+      height: 25px;
+      font-size:20px;
+      display: inline-flex;
+      align-items: center;
+     }
+     #windowcontents {
+      background: lightgrey;
+      margin-bottom: 0px;
+      height: 100%;
+     }
+     #mustext {
+      font-family: sillymariofont;
+      font-size: 15px;
+      margin-bottom: 0px;
+      color: green;
+      text-decoration: underline;
+      -webkit-text-stroke: 1.5px black;
+     }
+     html {
+      height: 100%;
+     }
+     body {
+      background-image: repeating-linear-gradient(white, lightgrey 10%, white 40%);
+      background-repeat: no-repeat;
+      height: 100%;
+      margin: 0;
+     }
+     
+     @font-face {
+      font-family: sillymariofont;
+      src: url(https://randomness69js.github.io/SuperMario256.ttf);
+     }
+     @font-face {
+      font-family: sillymariofont2;
+      src: url(https://randomness69js.github.io/SuperMarioBeta256.ttf);
+     }
+    
+
+     #smg200icon {
+      margin: 0;
+     }
+     
+     #toptitle {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+     -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+     }
+     
+     #title {
+      font-family: sillymariofont;
+      font-size: 50px;
+      color: white;
+      margin-top: 0px;
+      margin-bottom: -30px;
+        -webkit-text-stroke: 3px black;
+     }
+     
+     #version {
+      color: yellow;
+      font-family: sillymariofont;
+      font-size: 30px;
+      margin-bottom: -10px;
+      -webkit-text-stroke: 3px orange;
+     }
+   
+  
+     /* teh buttonz */
+     @property --grad1 {
+      syntax: '<color>';
+      initial-value: white;
+      inherits: false;
+     }
+     @property --grad2 {
+      syntax: '<color>';
+      initial-value: grey;
+      inherits: false;
+     }
+
+     #buttons {
+      font-size:10px;
+      position: absolute;
+      top: 51%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      transition-duration 1s;
+     }
+     #morebuttons {
+      font-size:10px;
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      transition-duration 1s;
+     }
+     #button1 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button1:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
+     }
+     
+     
+     #button2 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button2:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
+     }
+     #button3 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button3:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
+     }  
+     #button4 {
+      position: relative;
+      top: 0;
+      left: 0;
+      --grad1: white;
+      --grad2: lightgrey;
+      background: linear-gradient(var(--grad1), var(--grad2));
+      color: white;
+      font-family: sillymariofont2;
+       -webkit-text-stroke: 1.5px black;
+      font-size: 20px;
+      text-align: center;
+      padding: 7px 32px;
+      border-radius: 14px;
+      transition: --grad1 0.1s, --grad2 0.2s;
+     }
+     #button4:hover {
+      --grad1: lightgrey;
+      --grad2: grey;
+      position: relative;
+      top: 0;
+      left: 0;
+     }
+   </style>
+   
+   
+  </head>
+  <!--/* please dont ask about the divs. it just works. */-->
+  <body>
+  <div id="windowdivcont" hidden> 
+   <div id="windowdiv">
+    <div id="windowtopcont">
+     <div id="windowtop">
+      <h3 id="wintoptext"> SMG200s Untitled MP3 Player<button id="xbutton" onclick="javascript:hidewindow()">X</button> </h3>
+     </div>
+    </div>
+    <div id="windowcontents">
+     <center> <img src="https://randomness69js.github.io/music/music.png" width="300px" height="300px" style="margin-bottom: -100px"></center>
+     <div id="musiccontrols">
+      <center> <button id="playbutton" onclick="javascript:playbutton();"> Play </button><button id="mutebutton" onclick="javascript:muteunmute();"> Mute </button>  
+      <h3 id="mustime" style="font-family: Arial; margin-top: 0px"> Hi </h3>
+      </center>
+     </div>
+     <hr>
+     <center> <p onclick="javascript:playsng1()" id="mustext"> Main Theme (Nintendo 3DS Video Theme) </p> </center>
+     <center> <p onclick="javascript:playsng2()" id="mustext"> Information Page (The End - C418) </p> </center>
+     <center> <p onclick="javascript:playsng3()" id="mustext"> Characters page (Thank you for your patience) </p> </center> 
+     <center> <p onclick="javascript:playsng4()" id="mustext"> Characters page Varient 2 (Thank you for your patience) </p> </center>
+     <center> <p onclick="javascript:playsng5()" id="mustext"> Characters page Varient 3 (Thank you for your patience) </p> </center>
+     <center> <p onclick="javascript:playsng6()" id="mustext"> About me Page (B3313 - Powerful mario) </p> </center>
+     <center> <p onclick="javascript:playsng7()" id="mustext"> Not found (Yume 2kki - Highway TV Room 7) </p> </center>
+     <center> <p onclick="javascript:playsng8()" id="mustext"> Spot the difference (Slideshow Whistler - Nintendo DSI) </p> </center>
+     <center> <p onclick="javascript:playsng9()" id="mustext"> New Item (Unnamed Bytebeat Song) </p> </center>
+    </div>
+   </div>
+  </div>
+  <script>
+  var mainmusloop=setInterval(function(){
+   document.getElementById("mustime").innerText=getmusictime();
+  }, 500);
+  function getmusictime() {
+   var date=new Date(0);
+   date.setSeconds(document.getElementsByTagName("audio")[0].currentTime);
+   var musstring=date.toISOString().substring(11, 19);
+  return musstring
+  }
+  var musicplaying=0
+  var musicplaying=document.getElementsByTagName("audio")[0].played.length
+  function muteunmute() {
+  if (document.getElementsByTagName("audio")[0].muted==true) {
+    document.getElementById("mutebutton").innerText="Mute"
+    document.getElementsByTagName("audio")[0].muted=false
+  } else {
+    document.getElementById("mutebutton").innerText="Unmute"
+    document.getElementsByTagName("audio")[0].muted=true
+  }
+  }
+  function playbutton() {
+   if (musicplaying==1) {
+    document.getElementsByTagName("audio")[0].pause()
+    document.getElementById("playbutton").innerText="Play"
+    musicplaying=0
+   } else {
+    document.getElementsByTagName("audio")[0].play()
+    document.getElementById("playbutton").innerText="Pause"
+    musicplaying=1
+   }
+  }
+  function playsng1() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song1.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng2() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song2.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }  
+  function playsng3() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage1.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }  
+  function playsng4() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage2.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng5() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/snd/smg200charpage3.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng6() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song3.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng7() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song4.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }  
+  function playsng8() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song5.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  function playsng9() {
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/music/song6.mp3"
+   musicplaying=1
+   document.getElementById("playbutton").innerText="Pause"
+  }
+  </script>
+  <audio autoplay loop>
+   <source src="https://files.catbox.moe/bu8lfl.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+   <div id="toptitle">
+    <center> <img id="smg200icon" src="smg200logo.png" width="400" height="210"></center>
+    <center> <p id="title">Randomness6956 world</p><center>
+    <p id="version">Welcome!</p>
+   </div>
+   <div id="buttons">
+    <a href="https://archive.org/details/randomness69-archives_20250503"> <button id="button1"> VIDEOS </button> <a>
+    <a href="https://randomness69js.github.io/info/"> <button id="button2"> INFO </button> </a>
+    <a href="https://randomness69js.github.io/game.html"><button id="button3"> GAMES </button> </a>
+    <a href="javascript:showwindow();"><button id="button4"> RADIO </button> </a>
+   </div>
+   <center> <div id="morebuttons">
+    <img src="https://randomness69js.github.io/buttons/button1.gif">
+    <a href="https://www.debian.org/"><img src="https://randomness69js.github.io/buttons/button2.jpg"> </a>
+    <img src="https://randomness69js.github.io/buttons/button3.gif"> 
+    <a href="https://www.w3schools.com/html/"><img src="https://randomness69js.github.io/buttons/button4.gif"> </a>
+    <a href="https://neocities.org/"><img src="https://randomness69js.github.io/buttons/button5.gif"> </a>
+    <a href="https://www.google.com/chrome/"><img src="https://randomness69js.github.io/buttons/button6.gif"> </a>
+    <a href="https://discord.gg/2Pt8FZs2zM/"><img src="https://randomness69js.github.io/buttons/button7.gif"> </a>
+   </div> </center>
+   <script>
+   //I would prefer if you didnt steal my code >:3
+   //I would prefer if you didnt steal my code >:3
+   //I would prefer if you didnt steal my code >:3
+   if (localStorage.getItem("hasRadio")=='true'){
+    document.getElementById("button4").hidden=""
+   } else {
+    document.getElementById("button4").hidden="true"
+   }
+   function showwindow() {
+    if (localStorage.getItem("hasRadio")=='true'){
+    document.getElementById("windowdivcont").hidden=""
+    }
+   }
+   function hidewindow() {
+    document.getElementById("windowdivcont").hidden="true"
+   }
+   if (localStorage.getItem("start")==null||localStorage.getItem("start")=='false') {
+    localStorage.setItem("start",true)
+    document.location.href="drama.html";
+   }
+   async function radio() {
+   if (localStorage.getItem("hasRadio")=='true'){
+    const rescall=await fetch("https://ipwho.is/",{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()})
+    const resjson=rescall.json()
+    resjson.then(async(result)=>{
+     resdata=result;
+     rescity=resdata.city.toString();
+     reslong=resdata.longitude.toString();
+     reslat=resdata.latitude.toString();
+     weatherurl="https://api.open-meteo.com/v1/forecast?latitude="+reslat+"&longitude="+reslong+"&hourly=temperature_2m&current=temperature_2m&timezone=auto&forecast_days=1&temperature_unit=fahrenheit&forecast_hours=6&temporal_resolution=hourly_3";
+     const weathcall=await fetch(weatherurl.toString(),{method: "GET", headers: { "Content-Type": "application/json",}, body: JSON.stringify()});
+     const weathjson=weathcall.json();weathjson.then((result)=>{
+      weathdata=result;
+      currenttemp=weathdata.current.temperature_2m.toString()+"F°";
+      console.log(currenttemp);
+      document.getElementById("version").innerText=rescity.toString()+" temperature is "+currenttemp.toString();
+      document.getElementById("version").style.color='red';
+   })})}}
+   if (localStorage.getItem("hasRadio")==null){
+    localStorage.setItem("hasRadio", false);  
+   }
+   var splashtext = document.getElementById("version")
+   var randomvalue=Math.round(Math.random(21)*21)
+   if (randomvalue==0) {
+    splashtext.innerText="i made tis website"
+   }
+   if (randomvalue==1) {
+    splashtext.innerText="lol"
+   }   
+   if (randomvalue==2) {
+    splashtext.innerText="Welcome to my world!"
+   }
+   if (randomvalue==3) {
+    splashtext.innerText="Cream of mushroom"
+   }
+   if (randomvalue==4) {
+    splashtext.innerText="Once a winner, always a winner."
+   }
+   if (randomvalue==5) {
+    splashtext.innerText="official home of smg200"
+   }
+   if (randomvalue==6) {
+    splashtext.innerText="YTP is dead."
+   }
+   if (randomvalue==7) {
+    splashtext.innerText="Please come to the castle."
+   }
+   if (randomvalue==8) {
+    splashtext.innerText="Makes your teeth turn grey!"
+   }
+   if (randomvalue==9) {
+    splashtext.innerText="Welcome!"
+   } 
+   if (randomvalue==10) {
+    splashtext.innerText="Dead end."
+   }
+   if (randomvalue==11) {
+    splashtext.innerText="c0debreaker"
+   }
+   if (randomvalue==12) {
+    splashtext.innerText="WHY ARE YOU BUYING CLOTHES AT THE SOUP STORE"
+   }
+   if (randomvalue==13) {
+    splashtext.innerText="I want you to keep your crummy dog off of my brand new carpet!"
+   }
+   if (randomvalue==14) {
+    splashtext.innerText="why do i feel so numb"
+   }
+   if (randomvalue==15) {
+    splashtext.innerText="I knew it. Your just another zombie."
+   }
+   if (randomvalue==16) {
+    splashtext.innerText="join my world. become insane."
+   }   
+   if (randomvalue==17) {
+    splashtext.innerText="gabario"
+   } 
+   if (randomvalue==18) {
+    splashtext.innerText="Day "+((Math.round(Math.random(6)*6))+1).toString()+" has started."
+   }
+   if (randomvalue==19) {
+    splashtext.innerText="Make sure to run a CHKDSK on it!"
+   }
+   if (randomvalue==20) {
+    splashtext.innerText="run away and hide"
+   }
+   if (randomvalue==21) {
+    splashtext.innerText="Refresh the page!"
+   }
+
+   function critical() {
+    if (document.getElementById("windowdivcont")) {
+    document.getElementById("windowdivcont").remove()
+    document.getElementsByTagName("script")[0].remove()
+    clearInterval(mainmusloop);
+    }
+    for (var i=0; i < document.getElementsByTagName("img").length; i++){
+     document.getElementsByTagName("img")[i].style.perspective=(20+Math.round(Math.random()*100)).toString()+'px'
+     document.getElementsByTagName("img")[i].style.transform='rotateY('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("img")[i].style.transform+='rotateX('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("img")[i].style.transform+='rotateZ('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("img")[i].style.width=(Math.round(Math.random()*300)-150).toString()+'%'
+     document.getElementsByTagName("img")[i].style.height=(Math.round(Math.random()*300)-150).toString()+'%'
+     document.getElementsByTagName("img")[i].style.filter="brightness("+Math.round((Math.random()*100))+"%)"
+     document.getElementsByTagName("img")[i].style.filter+="hue-rotate("+Math.round((Math.random()*360))+"deg)"
+     document.getElementsByTagName("img")[i].style.position="relative"
+     document.getElementsByTagName("img")[i].style.top=Math.round((Math.random()*350)-150).toString()+"px"
+     document.getElementsByTagName("img")[i].style.right=Math.round((Math.random()*3500)-1500).toString()+"px"
+    }
+    for (var i=0; i < document.getElementsByTagName("button").length; i++){
+     document.getElementsByTagName("button")[i].style.perspective=(20+Math.round(Math.random()*100)).toString()+'px'
+     document.getElementsByTagName("button")[i].style.transform='rotateY('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("button")[i].style.transform+='rotateX('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("button")[i].style.transform+='rotateZ('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("button")[i].style.width=(Math.round(Math.random()*300)-150).toString()+'%'
+     document.getElementsByTagName("button")[i].style.height=(Math.round(Math.random()*300)-150).toString()+'%'
+     document.getElementsByTagName("button")[i].style.filter="brightness("+Math.round((Math.random()*100))+"%)"
+     document.getElementsByTagName("button")[i].style.filter+="hue-rotate("+Math.round((Math.random()*360))+"deg)"
+     document.getElementsByTagName("button")[i].style.position="relative"
+     document.getElementsByTagName("button")[i].style.top=Math.round((Math.random()*350)-150).toString()+"px"
+     document.getElementsByTagName("button")[i].style.backgroundImage="repeating-linear-gradient(#"+(Math.floor(Math.random()*16777215).toString(16))+", #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%, #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%)"
+     document.getElementsByTagName("button")[i].style.color="#"+(Math.floor(Math.random()*16777215).toString(16))
+     document.getElementsByTagName("button")[i].innerText=(Math.floor(Math.random()*1677768581231982763).toString(36))+(Math.floor(Math.random()*1677768581231982763).toString(36))
+     document.getElementsByTagName("button")[i].style.right=Math.round((Math.random()*1000)-500).toString()+"px"
+    }
+    for (var i=0; i < document.getElementsByTagName("p").length; i++){
+     document.getElementsByTagName("p")[i].style.perspective=(20+Math.round(Math.random()*100)).toString()+'px'
+     document.getElementsByTagName("p")[i].style.transform='rotateY('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("p")[i].style.transform+='rotateX('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("p")[i].style.transform+='rotateZ('+(Math.round(Math.random()*360)).toString()+'deg)'
+     document.getElementsByTagName("p")[i].style.width=(Math.round(Math.random()*300)-150).toString()+'%'
+     document.getElementsByTagName("p")[i].style.height=(Math.round(Math.random()*300)-150).toString()+'%'
+     document.getElementsByTagName("p")[i].style.filter="brightness("+Math.round((Math.random()*100))+"%)"
+     document.getElementsByTagName("p")[i].style.filter+="hue-rotate("+Math.round((Math.random()*360))+"deg)"
+     document.getElementsByTagName("p")[i].style.position="relative"
+     document.getElementsByTagName("p")[i].style.top=Math.round((Math.random()*1000)-500).toString()+"px"
+     document.getElementsByTagName("p")[i].style.color="#"+(Math.floor(Math.random()*16777215).toString(16))
+     document.getElementsByTagName("p")[i].innerText=atob((Math.floor(Math.random()*1677768581231982763).toString(36))+ (Math.floor(Math.random()*1677768581231982763).toString(36)))
+     document.getElementsByTagName("p")[i].style.right=Math.round((Math.random()*1000)-500).toString()+"px"
+   }
+  document.getElementsByTagName("body")[0].style.backgroundImage="repeating-linear-gradient(#"+(Math.floor(Math.random()*16777215).toString(16))+", #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%, #"+(Math.floor(Math.random()*16777215).toString(16))+" "+Math.round(Math.random(100)*100).toString()+"%)"
+  if (((Math.round(Math.random(10)*10))==7)){
+   document.getElementsByTagName("body")[0].style.backgroundImage="url('https://randomness69js.github.io/buttons/offline.PNG')"
+   document.getElementsByTagName("body")[0].style.backgroundRepeat="no-repeat"
+   document.getElementsByTagName("body")[0].style.backgroundAttachment="fixed"
+   document.getElementsByTagName("body")[0].style.backgroundSize="cover"
+  }
+  if (Math.round(Math.random(1000)*1000)==5){
+   let Node1 = document.createElement('button')
+   Node1.innerText="BUTTON"
+   Node1.style.position = 'fixed'
+   Node1.style.top = Math.random() * window.innerWidth + 'px';
+   Node1.style.left = Math.random() * window.innerWidth + 'px';
+   Node1.id="button1"
+   document.body.appendChild(Node1)
+  }
+  let AudNode=document.createElement('audio')
+  AudNode.src="https://files.catbox.moe/rfi93n.mp3"
+  AudNode.id="skeriaudio"
+  document.body.appendChild(AudNode)
+  var AudNodeElm = document.getElementById("skeriaudio");
+  AudNodeElm.play()
+  AudNodeElm.onended = function() {
+  document.location="https://randomness69js.github.io/ICANSEEYOU"
+  }
+  nks=""
+  ks=[]
+  for (var i=32; i<400; i++){
+   ks[i-32]=String.fromCharCode((i))
+  }
+ 
+ for (var i=0; i<Math.round(Math.random(70)*70);i++) {
+   nks+=ks[Math.round(Math.random((400-32))*(400-32))]
+  }
+ document.title=nks
+}
+
+
+function criticalloop() {
+ critical()
+}
+function startscare() {
+ let node2=document.createElement('canvas')
+ node2.id='canvas'
+ node2.width=window.innerWidth.toString()
+ node2.height=window.innerHeight.toString()
+ node2.style.position= 'fixed'
+ node2.style.top='0px'
+ node2.style.left='0px'
+ document.body.appendChild(node2)
+ setInterval(criticalloop, 100);
+}
+if (Math.round(Math.random(10005)*10005)==9084||document.location.href=="https://randomness69js.github.io/#thescary"){
+ startscare()
+}
+     
+     
+     
+   radio();
+   console.log("test")
+   </script>
+   <script>
+    /***********************************************
+    * ORIGINAL CODE PROVIVED BY W3SCHOOLS
+    * MODIFIED BY ME
+    ***********************************************/
+    dragElement(document.getElementById("windowdivcont"))
+    function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+     if (document.getElementById("windowtopcont")) {
+      document.getElementById("windowtopcont").onmousedown = dragMouseDown;
+     }
+    function dragMouseDown(e) {
+     e = e || window.event;
+     e.preventDefault();
+     pos3 = e.clientX;
+     pos4 = e.clientY;
+     document.onmouseup = closeDragElement;
+     document.onmousemove = elementDrag;
+    }
+    function elementDrag(e) {
+     e = e || window.event;
+     e.preventDefault();
+     pos1 = pos3 - e.clientX;
+     pos2 = pos4 - e.clientY;
+     pos3 = e.clientX;
+     pos4 = e.clientY;
+     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+    function closeDragElement() {
+     document.onmouseup = null;
+     document.onmousemove = null;
+    }
+    }
+    </script>
+  </body>
+</html>
