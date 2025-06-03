@@ -1,0 +1,154 @@
+<html>
+<head>
+<style>
+ html {
+  height: 100%;
+ }
+ body {
+  min-height:100%;
+  background: 
+   linear-gradient(rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) 
+   0 0/100% 200%;
+  animation: a 1s linear infinite;
+  height: 100%;
+  margin: 0;
+ }
+ @keyframes a {
+  to {background-position:0 -200%}
+ }
+ #status {
+  color: #f3bbff;
+  animation: raColor 0.5s infinite linear;
+  margin: 0px;
+  -webkit-text-stroke: 1.2px black;
+ }
+ #other {
+  color: #f3bbff;
+  animation: raColor 7s infinite linear;
+  margin: 0px;
+  -webkit-text-stroke: 0.7px black;
+ }
+ @keyframes raColor {
+  10% {
+   color: #a43535;
+  }
+  20% {
+   color: #ff7b00;
+  }
+  30% {
+   color: #ffff51;
+  }
+  40% {
+   color: #a7ff4e;
+  }
+  50% {
+   color: #7addfe;
+  }
+  60% {
+   color: #6b6bfd;
+  }
+  70% {
+   color: #ca61ff;
+  }
+  80% {
+   color: #ff54af;
+  }
+  90% {
+   color: #f3bbff;
+  }
+}
+</style>
+<script>
+var intervalID = window.setInterval(err, 35);
+var blur=10;
+function err() {
+ i=Math.round(Math.random(17)*17)
+ if (blur>0) {
+  blur=blur-0.1;
+ }
+ document.getElementsByTagName("body")[0].style="filter: blur("+blur.toString()+"px);"
+ if (i==0) {
+  document.getElementById("status").innerText="500 Internal Server Error"
+  document.title="500 Internal Server Error"
+ }
+ if (i==1) {
+  document.getElementById("status").innerText="404 Not Found"
+  document.title="404 Not Found"
+ }
+ if (i==2) {
+  document.getElementById("status").innerText="413 Request Entity Too Large"
+  document.title="413 Request Entity Too Large"
+ }
+ if (i==3) {
+  document.getElementById("status").innerText="502 Bad Gateway"
+  document.title="502 Bad Gateway"
+ }
+ if (i==4) {
+  document.getElementById("status").innerText="403 Forbidden"
+  document.title="403 Forbidden"
+ }
+ if (i==5) {
+  document.getElementById("status").innerText="503 Service Temporarily Unavailable"
+  document.title="503 Service Temporarily Unavailable"
+ }
+ if (i==6) {
+  document.getElementById("status").innerText="401 Authorization Required"
+  document.title="401 Authorization Required"
+ }
+ if (i==7) {
+  document.getElementById("status").innerText="405 Not allowed"
+  document.title="405 Not allowed"
+ }
+ if (i==8) {
+  document.getElementById("status").innerText="400 Bad Request"
+  document.title="400 Bad Request"
+ }
+ if (i==9) {
+  document.getElementById("status").innerText="451 Unavailable For Legal Reasons"
+  document.title="451 Unavailable For Legal Reasons"
+ }
+ if (i==10) {
+  document.getElementById("status").innerText="429 Too Many Requests"
+  document.title="429 Too Many Requests"
+ }
+ if (i==11) {
+  document.getElementById("status").innerText="426 Upgrade Required"
+  document.title="426 Upgrade Required"
+ }
+ if (i==12) {
+  document.getElementById("status").innerText="504 Gateway Timeout"
+  document.title="504 Gateway Timeout"
+ }
+ if (i==13) {
+  document.getElementById("status").innerText="421 Misdirected Request"
+  document.title="421 Misdirected Request"
+ }
+ if (i==14) {
+  document.getElementById("status").innerText="402 Payment Required"
+  document.title="402 Payment Required"
+ }
+ if (i==15) {
+  document.getElementById("status").innerText="408 Request Timeout"
+  document.title="408 Request Timeout"
+ }
+ if (i==16) {
+  document.getElementById("status").innerText="414 Request-URI Too Large"
+  document.title="414 Request-URI Too Large"
+ } 
+}
+
+
+err()
+</script>
+</head>
+<body style="filter: blur(10px);">
+<center>
+ <audio onended="document.location='https://randomness69js.github.io/';" id="audio" autoplay hidden>
+  <source src="https://files.catbox.moe/frquij.mp3" type="audio/mpeg">
+ </audio>
+ <h1 id="status">404 Not found</h1>
+ <hr>
+ <div id="other">nginx</div>
+</center>
+</body>
+</html>
