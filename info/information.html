@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> SuperMarioGlitchy200 </title>
+  <style>
+  html {
+   height: 100%;
+  }
+  body {
+   background-image: repeating-linear-gradient(grey, lightgrey 10%, grey 100%);
+   background-repeat: no-repeat;
+   height: 100%;
+   margin: 0;
+  }
+  @font-face {
+   font-family: sillymariofont;
+   src: url(https://randomness69js.github.io/SuperMario256.ttf);
+  }
+  @font-face {
+   font-family: sillymariofont2;
+   src: url(https://randomness69js.github.io/SuperMarioBeta256.ttf);
+  }
+  h2 {
+   font-family: sillymariofont;
+   color: white;
+    -webkit-text-stroke: 2px black;
+   margin-bottom: 0px;
+   margin-right: 150px;
+   text-align: center;
+   margin-left: 80px;
+   font-size: 30px;
+  }
+  #text {
+   left: 0%;
+   position: absolute;
+   top: 20%;
+   display:block;
+  }
+  #scary {
+   font-family: sillymariofont;
+   color: red; 
+    -webkit-text-stroke: 1px black;
+   font-size: 32px;
+   margin-bottom: 0px;
+   margin-right: 150px;
+   text-align: center;
+   margin-left: 80px;
+   font-size: 30px;
+   overflow: hidden;
+   display: "inline-block";
+  }
+  b {
+   position: relative;
+  }
+  #buttons {
+   font-size:10px;
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   transition-duration 1s;
+  }
+  #button1 {
+   position: relative;
+   top: 0;
+   left: 0;
+   --grad1: white;
+   --grad2: lightgrey;
+   background: linear-gradient(var(--grad1), var(--grad2));
+   color: white;
+   font-family: sillymariofont2;
+   -webkit-text-stroke: 1.5px black;
+   font-size: 20px;
+   text-align: center;
+   padding: 7px 32px;
+   border-radius: 14px;
+   transition: --grad1 0.1s, --grad2 0.2s;
+   }
+  #button1:hover {
+   --grad1: lightgrey;
+    --grad2: grey;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  </style>
+  </head>
+  <body>
+   <audio autoplay>
+    <source src="https://files.catbox.moe/g8xlct.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+   </audio>
+   <div id="text">
+    <h2> Hi! My name is SMG200 or 200bot, you might know me from my terminated youtube channel "randomness6956"
+     or you may know from discord or anything else. This is my personal little website where I will put all 
+     my stuff on! This website was made specifically for finding me and my content. My content usually revolves 
+     around SM64/GMOD bloopers and YTPs. If you are new to my content, I recommend you check out my 100 subscriber 
+     special. You can find it in the videos tab. If you enjoy my content, then you should also watch my SM64 bloopers. 
+     I also make videos for the SMLArchives which you can check it out <a href="https://smlarchives.neocities.org">here</a>
+     If you somehow found this page. Then I advise you</h2>
+     <span id="shakeyletters">
+      <center> 
+       <b id="scary"> 
+        <b class="letter1">T</b>
+        <b class="letter2">O</b>
+        <b class="letter3"> </b>
+        <b class="letter4">R</b>
+        <b class="letter5">U</b>
+        <b class="letter6">N</b>
+        <b class="letter7">A</b>
+        <b class="letter8">W</b>
+        <b class="letter9">A</b>
+        <b class="letter10">Y</b>
+        <b class="letter11">  </b>
+        <b class="letter12">A</b>
+        <b class="letter13">N</b>
+        <b class="letter14">D</b>
+        <b class="letter15">  </b>
+        <b class="letter16">D</b>
+        <b class="letter17">O</b>
+        <b class="letter18">N</b>
+        <b class="letter19">T</b>
+        <b class="letter20"> </b>
+        <b class="letter21">L</b>
+        <b class="letter22">O</b>
+        <b class="letter23">O</b>
+        <b class="letter24">K</b>
+        <b class="letter25"> </b>
+        <b class="letter26">B</b>
+        <b class="letter27">A</b>
+        <b class="letter28">C</b>
+        <b class="letter29">K</b> 
+       </b> 
+       </center>
+      </span>
+   </div>
+   <div id="buttons">
+    <a href="https://randomness69js.github.io/"> <button id="button1"> GO BACK </button> </a>
+  </div>
+  <script>
+   function charmove() {
+    for (var i=1; i < 30; i++) {
+     span1=document.getElementById("shakeyletters");
+     span2=document.getElementsByClassName("letter"+i.toString()).item("0");
+     var sleft=((Math.random()*0.9)-0.5)*5+"px"; 
+     var sright=((Math.random()*0.9)-0.5)*5+"px"; 
+     var sstop=((Math.random()*0.9)-0.5)*5+"px"; 
+     var srot=((Math.random()*0.3)-0.8)*5+"deg"; 
+     span2.style.display="inline-block;"
+     span2.style.left=sleft;
+     span2.style.right=sright;
+     span2.style.top=sstop;
+     span2.style.rotate=srot; 
+     }
+    }
+    var intervalId = window.setInterval(function(){
+     charmove()
+    }, 5);
+  </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <title> Randomness69 World </title>
+  <head>
+   <style>
+     html {
+      height: 100%;
+     }
+     body {
+      background-image: repeating-linear-gradient(black, black 10%, black 40%);
+      background-repeat: no-repeat;
+      height: 100%;
+      margin: 0;
+     }
+     
+     @font-face {
+      font-family: sillymariofont;
+      src: url(https://randomness69js.github.io/SuperMario256.ttf);
+     }
+     @font-face {
+      font-family: sillymariofont2;
+      src: url(https://randomness69js.github.io/SuperMarioBeta256.ttf);
+     }
+    
+     header {
+      text-align: center;
+      padding: 150px;
+      border-bottom: 4px solid #000000;
+     }
+     
+     #smg200worldicon {
+      margin: 0;
+      margin-top: 60px;
+      margin-bottom: -30px;
+     }
+     
+     #toptitle {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+     -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+     }
+     
+     #title {
+      font-family: sillymariofont;
+      font-size: 80px;
+      color: red;
+      margin-top: 0px;
+      margin-bottom: -30px;
+        -webkit-text-stroke: 3px white;
+     }
+     #card {
+      background: linear-gradient(0deg, rgba(5, 5, 5, 1), rgba(45, 45, 45, 1));
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      outline: 5px solid white;
+     }
+     #charlist {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 1200px;
+     }
+
+   </style>
+   
+   
+  </head>
+  <body>
+  <audio autoplay loop>
+   <source src="https://files.catbox.moe/wg2o1x.mp3" type="audio/mpeg">
+   Your browser does not support the audio element.
+  </audio>
+  <header>
+  <div id="toptitle">
+   <center> <a href="https://randomness69js.github.io/" > <img id="smg200worldicon" src="worldlogosmg.png" width="400px" height="200px" > </a> </center>
+   <p id="title"> Characters </p>
+  </div>
+  </header>
+  <div id="charlist">
+   <center> 
+    <div id="card">
+     <a href="https://randomness69js.github.io/info/characters/char1.html"> <img src="https://randomness69js.github.io/info/characterphotos/CharSMG200.jpg" height="150px" width="150px"> </a>
+     <a href="https://randomness69js.github.io/info/characters/char2.html"> <img src="https://randomness69js.github.io/info/characterphotos/CharRift.jpg" height="150px" width="150px"> </a>
+     <a id="devkit" href="#" onclick="javascript:scare();"> <img src="https://randomness69js.github.io/info/characterphotos/CharDevkit.jpg" height="150px" width="150px"> </a>
+     <img src="https://randomness69js.github.io/info/characterphotos/CharSoviet.jpg" height="150px" width="150px">
+     <img src="https://randomness69js.github.io/info/characterphotos/CharMrpuzzles.jpg" height="150px" width="150px">
+     <img src="https://randomness69js.github.io/info/characterphotos/CharHoodbro.jpg" height="150px" width="150px">
+    </div> 
+  </center>
+  </div>
+  <script>
+  function scare() {
+   document.getElementsByTagName("audio")[0].pause();
+   document.getElementsByTagName("audio")[0].src="https://randomness69js.github.io/loe.mp3";
+   document.getElementsByTagName("audio")[0].play();
+   document.getElementsByTagName("audio")[0].loop=false
+   document.getElementsByTagName("audio")[0].onended = function() {document.location.href="https://randomness69js.github.io/"}
+   imgnode=document.createElement("img")
+   imgnode.style.width="100%"
+   imgnode.style.zIndex="800"
+   imgnode.style.pointerEvents="none"
+   imgnode.style.height="100%"
+   imgnode.style.position="absolute"
+   imgnode.style.top="-100px"
+   imgnode.style.left="0%"
+   imgnode.src="https://randomness69js.github.io/tand.jpg"
+   document.body.appendChild(imgnode)
+   document.body.style.overflow="hidden"
+   var i=0
+   var i2=0
+   document.getElementById("devkit").onclick=null;
+   function imgsf() {
+    document.getElementById("toptitle").style.opacity=(100-i*2.2).toString()+"%"
+    document.getElementById("charlist").style.opacity=(100-i*2.2).toString()+"%"
+    imgnode.style.top=((i-100).toString())+"px"
+    imgnode.style.opacity=i2.toString()+"%"
+    i++;
+    if (i<100) {
+     i2++;
+    } else {
+     i2=i2-1.1;
+    } 
+    if (i<200) {
+     setTimeout(imgsf, 30);
+    } 
+   }
+  imgsf();
+ }
+ </script>
+  </body>
+</html>
