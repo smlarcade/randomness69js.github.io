@@ -1,0 +1,149 @@
+<html>
+<head>
+ <style>
+  body {
+   background-image: url("https://randomness69js.github.io/computer/pcmeat.jpg");
+   cursor: url(cursor.png) 2 2, auto;
+  }
+  #video {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   height: 100%;
+   width: 100%;
+  }
+  @font-face {
+   font-family: 'pencil';
+   src: url('https://randomness69js.github.io/computer/pencil.ttf');
+  }
+  #pbutton {
+   background-image: url("https://randomness69js.github.io/computer/meat.jpg");
+   font-family: pencil;
+   color: orange;
+   font-size: 20px;
+   margin-left: 12px;
+   -webkit-text-stroke-width: 1.25px;
+   -webkit-text-stroke-color: darkred;
+  }
+  #input {  
+   position: relative;
+   display: flex;
+   justify-content: center;
+   top: 50%;
+   align-items: center;
+  }
+  #profiletext {  
+   position: relative;
+   display: flex;
+   justify-content: center;
+   top: 47%;
+   align-items: center;
+  }
+  #img1 {
+   position: absolute;
+   top: -265%;
+   z-index:1;
+  }
+  #img2 {
+   position: absolute;
+   top: -265%;
+   z-index:0;
+  }
+  #pinput {
+   background-image: url("https://randomness69js.github.io/computer/meat.jpg");
+   font-family: pencil;
+   color: white;
+   font-size: 20px;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: red;
+  }
+ </style>
+</head>
+<body>
+<audio loop autoplay> 
+ <source src="https://randomness69js.github.io/computer/funsong.mp3" type="audio/mpeg">
+</audio>
+ <div id="profiletext">
+  <center> <img id="img2" width="140px" height="130px" onclick="javascript:pass()" src="https://randomness69js.github.io/computer/key.png"> </center>
+  <center> <img id="img1" onmouseover="javascript:letmeknow();" width="140px" height="130px" src="https://randomness69js.github.io/computer/profile.png"> </center>
+  <center> <img width="140px" height="50px" src="https://randomness69js.github.io/computer/pcname.png"> </center>
+ </div>
+ <div id="input">
+  <input type="text" id="pinput">
+  <button id="pbutton" onclick="javascript:okbutton()">OK</button>
+ </div>  
+<script>
+//ILL ADD MORE CODES LATER THAT WILL REVEAL MORE SECRETS SO PLEASE WAIT.
+history.pushState(null,null,location.href),window.onpopstate=function() {
+ history.go(1);
+ err=new Audio("https://randomness69js.github.io/computer/error.mp3")
+ err.currentTime=0
+ err.play()
+}
+document.title="SIGN IN"
+ function letmeknow() {
+  doctitle=document.title
+  if (doctitle=="DRAG ME"){
+  } else {
+   setTimeout(letmeknow, 55);
+  }
+  docfinaltitle="DRAG ME"
+  drand=Math.round(Math.random(17)*17)
+  doctitle=doctitle.replace(doctitle[drand],docfinaltitle[drand])
+  document.title=doctitle
+ }
+ function okbutton() {
+  if(document.getElementById("pinput").value.toString().toUpperCase()=="DEVESTATION") {
+    videoscare()
+  } else {
+  	alert("ERROR")
+  }
+ }
+ function videoscare() {
+  document.body.innerHTML="<video src='https://randomness69js.github.io/computer/video.mp4' id='video' type='video/mp4' autoplay> </video>"
+  video=document.getElementById("video")
+  video.addEventListener("ended", (event) => {
+   document.location="https://randomness69js.github.io/"
+  })
+ }
+ function pass() {
+  alert("PASSWORD HINT: DEVESTATION")
+  document.getElementById("img1").style.top='-265%'
+ }
+ /***********************************************
+ * ORIGINAL CODE PROVIVED BY W3SCHOOLS
+ * MODIFIED BY ME
+ ***********************************************/
+ dragElement(document.getElementById("img1"))
+ function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+   if (document.getElementById("img1")) {
+    document.getElementById("img1").onmousedown = dragMouseDown;
+   }
+   function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+   }
+   function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    pos1 = pos3 - (e.clientX);
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    if (pos2>0) {
+     elmnt.style.top = (elmnt.offsetTop - (pos2/12)) + "px";
+    }
+   }
+   function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+   }
+  }
+</script>
+</body>
+</html>
