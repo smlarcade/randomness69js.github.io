@@ -99,7 +99,9 @@ document.title="SIGN IN"
   if(document.getElementById("pinput").value.toString().toUpperCase()=="DEVESTATION") {
     videoscare()
   } else {
-  	alert("ERROR")
+   if (!(document.getElementById("pinput").value.toString().toUpperCase()=="PHONE")) {
+  	 alert("ERROR")
+   }
   }
  }
  function videoscare() {
