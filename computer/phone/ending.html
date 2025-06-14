@@ -1,0 +1,52 @@
+<html>
+<title> Bad ending </title>
+<style>
+body {
+ background-color: black;
+}
+h2 {
+ position: absolute;
+ top: 50%;
+ color: white;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ font-family: Arial;
+}
+</style>
+<body>
+<audio autoplay>
+  <source src="https://randomness69js.github.io/computer/phone/termination.mp3" type="audio/mpeg">
+</audio>
+ <center>
+  <h2> 
+  YOU HAVE BREACHED OUR CONTRACT AND TERMS OF SERVICE.<br>
+  YOUR EMPLOYMENT HAS NOW BEEN TERMINATED.<br>
+  A TEAM WILL ARRIVE SHORTLY TO SCRUB YOUR MEMORIES. <br>
+  <br>
+  BAD ENDING.
+  </h2>
+ </center>
+<script>
+opacity=0
+const delay=ms=>new Promise(res => setTimeout(res, ms));
+const checkaccess=async()=>{
+await delay(20);
+ ref=document.referrer.includes("phone");
+ if (!ref){
+  document.location="/"; 
+ }
+}
+checkaccess()
+var goob = setTimeout(loop, 200);
+function loop() {
+ opacity+=0.1
+ document.getElementsByTagName("h2").item(0).style.filter="opacity("+opacity+"%)";
+ if (opacity>4 && opacity<5){
+  localStorage.setItem("endingAgotten", true);
+ }
+ goob=setTimeout(loop, 20);
+}
+loop()
+</script>
+</body>
+</html>

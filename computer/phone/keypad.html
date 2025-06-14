@@ -1,0 +1,167 @@
+<html>
+<title> PHONE </title>
+<head>
+<style>
+ body {
+  background-image: url("https://randomness69js.github.io/computer/phone/grass2.jpeg");
+ }
+ #pincont {
+  border: 2px solid black;
+  border-radius: 3px;
+  width: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 360px;
+  display: flex;
+  background-image: url("https://randomness69js.github.io/computer/phone/grass.jpg");
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -50%);
+  flex-direction: column;
+ }
+ #filter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 99;
+  backdrop-filter: sepia(200%) saturate(3410%) brightness(170%) hue-rotate(0deg);
+  pointer-events: none;
+ }
+ #pinrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ }
+ #pinbtn {
+  width: 15%;
+  height: 60px;
+  margin: 2px;
+  color: white;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 7%;
+  background-image: url("https://randomness69js.github.io/computer/phone/grass2.jpeg");
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-text-stroke: 1px black;
+ }
+ #pinbtn:hover {
+  background-image: url("https://randomness69js.github.io/computer/phone/grassrot.jpg");
+ }
+ #pinbtn:active {
+  background-image: url("https://randomness69js.github.io/computer/phone/grassdead.jpg");
+ }
+ #screendiv {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+ }
+</style>
+</head>
+<body>
+<audio autoplay>
+  <source src="https://randomness69js.github.io/computer/phone/phoneamb.mp3" type="audio/mpeg">
+</audio>
+<div id="pincont">
+ <div id="screendiv"> 
+  <input type="text" id="pinpad-input" readonly/>
+ </div>
+ <div id="pinrow">
+  <button type="button" id="pinbtn" value="1"> 1 </button>
+  <button type="button" id="pinbtn" value="2"> 2 </button>
+  <button type="button" id="pinbtn" value="3"> 3 </button>
+ </div>
+ <div id="pinrow">
+  <button type="button" id="pinbtn" value="4"> 4 </button>
+  <button type="button" id="pinbtn" value="5"> 5 </button>
+  <button type="button" id="pinbtn" value="6"> 6 </button>
+ </div>
+ <div id="pinrow">
+  <button type="button" id="pinbtn" value="7"> 7 </button>
+  <button type="button" id="pinbtn" value="8"> 8 </button>
+  <button type="button" id="pinbtn" value="9"> 9 </button>
+ </div>
+ <div id="pinrow">
+  <button type="button" id="pinbtn" value="*"> * </button>
+  <button type="button" id="pinbtn" value="0"> 0 </button>
+  <button type="button" id="pinbtn" value="#"> # </button>
+ </div>
+ <div id="pinrow">
+  <button type="button" id="pinbtn" value="0"> <img src="https://randomness69js.github.io/computer/phone/call.png" width="110%" height="60px"> </button>
+ </div>
+</div>
+<div id="filter" style="filter: opacity(0)"> </div>
+<script>
+  const delay=ms=>new Promise(res => setTimeout(res, ms));
+  const checkaccess=async()=>{
+  await delay(20);
+  ref=document.referrer.includes("computer");
+  if (!ref){
+   document.location="/"; 
+  }
+ }
+ checkaccess()
+ var phoneaudio = new Audio('https://randomness69js.github.io/computer/phone/numbers/phone0.wav');
+ buttons=document.getElementsByTagName("button")
+ submitbutton=document.getElementsByTagName("button").item(12)
+ screenid=document.getElementById("pinpad-input")
+ pininput=''
+ for (let i=0; i < 12; i++) {
+  buttonid=buttons.item(i)
+  buttonid.addEventListener("click",(e) => { 
+   if (pininput.length<12 && (!(screenid.value=="INVALID NUMBER")||!(screenid.value=="DIALING"))) {
+    pininput+=e.target.value
+    phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phone"+e.target.value+".wav"
+    if (e.target.value=="*") { phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phones.wav"}
+    if (e.target.value=="#") { phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phoneh.wav"}
+    phoneaudio.play()
+    screenid.value=pininput
+    if(pininput.length==3) { pininput+="-"}
+    if(pininput.length==7) { pininput+="-"}
+   }
+   })
+ }
+ submitbutton.addEventListener("click",(e) => {
+  if (pininput.toString().includes("#")||pininput.toString().includes("*")||pininput.length<12) {
+   invalid();
+  } else {
+   phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonedialing.wav"
+   phoneaudio.play()
+   screenid.value="DIALING"
+   setTimeout(function () {call()},9000)
+  }
+ })
+ function call() {
+  if (pininput=="229-967-6836") {
+   screenid.value="229-967-6836"
+   pininput="229-976-6836"
+   phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonecalled.wav"
+   phoneaudio.play()
+   phoneaudio.addEventListener("ended", (event) => {document.location.href="ending.html" })
+   setTimeout(function () {red()},1000)
+  } else {
+   phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phonenumbernotexist.wav"
+   phoneaudio.play()
+   screenid.value="INVALID NUMBER"
+   setTimeout(function () {screenid.value=""; pininput=""},14000)
+  }
+ }
+ function invalid() {
+  phoneaudio.src="https://randomness69js.github.io/computer/phone/numbers/phoneinvalidcall.wav"
+  phoneaudio.play()
+  screenid.value="INVALID NUMBER"
+ }
+ opac=0
+ function red() {
+  opac+=0.001
+  document.getElementById("filter").style.filter="opacity("+opac+")"
+  setTimeout(red, 10);
+ }
+</script>
+</body>
+</html>
