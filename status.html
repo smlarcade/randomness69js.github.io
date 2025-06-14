@@ -45,6 +45,20 @@ Hello. The federal government is conducting an investigation on us due to the an
 As a result we will be purging all of the old blog entrys tommorow to prevent legal action.<br>
 All printed-copys will be burned and digital archives will be scraped for and dealt with. Please dont try to stop this. Sorry for the inconvenience. - SMG200 Data Archives and Misinformation management team<br>
 </p>
+
+
+
+<script>
+ const delay=ms=>new Promise(res => setTimeout(res, ms));
+ const checkaccess=async()=>{
+ await delay(20);
+  ref=document.referrer.includes("computer");
+  if (!ref){
+   document.location="/"; 
+  }
+ }
+ checkaccess()
+</script>
 </body>
 
 </html>
