@@ -96,12 +96,16 @@ document.title="SIGN IN"
   if(document.getElementById("pinput").value.toString().toUpperCase()=="PHONE") {
    document.location="https://randomness69js.github.io/computer/phone/index.html";
   }
+  if(document.getElementById("pinput").value.toString().toUpperCase()=="GUILT") {
+   document.location="https://randomness69js.github.io/computer/guilt/index.html";
+  }
   if(document.getElementById("pinput").value.toString().toUpperCase()=="DEVESTATION") {
     videoscare()
   } else {
-   if (!(document.getElementById("pinput").value.toString().toUpperCase()=="PHONE")) {
+   if (!(document.getElementById("pinput").value.toString().toUpperCase()=="PHONE")||!(document.getElementById("pinput").value.toString().toUpperCase()=="GUILT")) {
   	 alert("ERROR")
    }
+
   }
  }
  function videoscare() {
