@@ -1,0 +1,121 @@
+<html>
+<head>
+<title> Ending. </title>
+ <style>
+ body {
+  background-color: black;
+  height: 100%; 
+  overflow: hidden;
+ }
+ h1 {
+  font-size:50px;
+ }
+ h2 {
+  font-size:40px;
+  margin-top: 20px;
+ }
+ h3 {
+  font-size:30px;
+  margin-bottom: -20px;
+ } 
+ #subend {
+   margin-bottom: 60px;	
+ }
+ #credits {
+  text-align: center;
+  font-family: sans-serif;
+  color: white;
+ }
+ #smg200img {
+  margin-bottom: -50px;	
+ }
+ #credits {
+  transform: translateY(35%); 	
+  animation: scroll 65s linear infinite;	
+ }
+ @keyframes scroll  {
+  0%   {
+  transform: translateY(35%); 		
+  }
+  100% {
+  transform: translateY(-100%); 
+  }
+ }
+ </style>
+<head>
+<body>
+<audio autoplay loop>
+<source src="https://randomness69js.github.io/computer/guilt/ending.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<div id="credits">
+<img id="smg200img" width="400" height="250" src="https://randomness69js.github.io/smg200logo.png">
+<h1> CREDITS </h1>
+<h2> WEBSITE DEVELOPMENT </h2>
+<h3> SMG200 - Website looks </h3>
+<h3> SMG200 - Website programming </h3>
+<h3> SMG200 - Games </h3>
+<h3> SMG200 - Videos </h3>
+<h3> SMG200 - Character pages </h3>
+<h3> SolSq - Regulatorrift Character page </h3>
+<h3> SMG200 - Status page writing </h3>
+<h3> Scott Cawthon - HandUnit Asset </h3>
+<h3 id="subend"> ??? - Tomoko Asset </h3>
+<h3></h3>
+<h2> MUSIC </h2>
+<h3>Main Theme (Nintendo 3DS Video Theme - Nintendo) </h3>
+<h3>Information Page (The End - C418) </h3>
+<h3>Characters page (Thank you for your patience - Leon Riskin) </h3>
+<h3>Characters page Varient 2 (Thank you for your patience - Leon Riskin) </h3>
+<h3>Characters page Varient 3 (Thank you for your patience - Leon Riskin) </h3>
+<h3>About me Page (B3313 - Powerful mario) </h3>
+<h3>Not found (Yume 2kki - Highway TV Room 7) </h3>
+<h3>Spot the difference (Slideshow Whistler - Nintendo DSI) </h3>
+<h3>New Item (Unnamed Bytebeat Song) </h3>
+<h3>Handunit 30acre (Cipher - Kevin macleod) </h3>
+<h3>Computer theme (B3313 - Infinite castle maze) </h3>
+<h3>Phone page (Nezuai - bunny000z0z0z0zx0x, Mojave) </h3>
+<h3 id="subend">Credits theme (FNAF3 Ending - Scott Cawthon) </h3>
+
+
+<h2> WEBSITE TESTERS </h2> 
+<h3>SolSq</h3>
+<h3 id="subend">LY2626</h3>
+
+<h2>INSPIRATION</h2>
+<h3>Nezuai</h3>
+<h3 id="subend">Gavinmiddleton</h3>
+
+<h2>SOFTWARE USED</h2>
+<h3>SubLime Text</h3>
+<h3>Neocities Text Editor</h3>
+<h3>Github HTML Editor</h3>
+<h3>Project64</h3>
+<h3>GMOD</h3>
+<h3>Pixlr</h3>
+<h3>Audacity</h3>
+<h3>VideoPad</h3>
+<h3>Chrome</h3>
+<h3 id="subend">Blender</h3>
+
+
+
+<h1>THANK YOU FOR PLAYING MY SITE!</h1>
+<h2>GOOD ENDING</h2>
+</div>
+<script>
+const delay=ms=>new Promise(res => setTimeout(res, ms));
+const checkaccess=async()=>{
+await delay(20);
+ref=document.referrer.includes("guilt");
+if (!ref){
+ document.location="/"; 
+}
+}
+checkaccess()
+setTimeout(function(){
+ document.location.href="https://randomness69js.github.io/"
+}, 65000);
+</script>
+</body>
+</html>
