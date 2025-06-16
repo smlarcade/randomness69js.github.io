@@ -102,8 +102,11 @@ document.title="SIGN IN"
   if(document.getElementById("pinput").value.toString().toUpperCase()=="DEVESTATION") {
     videoscare()
   } else {
-   if (!(document.getElementById("pinput").value.toString().toUpperCase()=="PHONE")||!(document.getElementById("pinput").value.toString().toUpperCase()=="GUILT")) {
+   if (!(document.getElementById("pinput").value.toString().toUpperCase()=="PHONE")) {
   	 alert("ERROR")
+   }
+   if ((!(document.getElementById("pinput").value.toString().toUpperCase()=="GUILT"))||(!(document.getElementById("pinput").value.toString().toUpperCase()=="GUILT"))) {
+    alert("ERROR")
    }
 
   }
