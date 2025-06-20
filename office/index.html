@@ -1,0 +1,78 @@
+<html>
+<head>
+<title> Your office. </title>
+<style>
+ body {
+  background: black;
+ } 
+ #desk {
+  height:100%;
+  position: absolute; 
+  width: 80%;
+  left: 10%;
+  top: 0px;
+ }
+ #monitor {
+  position: absolute; 
+  left: 41%;
+  top: 45%;
+  width: 13%;
+  height: 25%;
+  z-index: 3;
+ }
+ #paper {
+  position: absolute; 
+  left: 41%;
+  top: 66%;
+  width: 4%;
+  height: 5%;
+  z-index: 2;
+ }
+ #tag {
+  position: absolute; 
+  left: 57%;
+  top: 64%;
+  width: 6%;
+  height: 8%;
+  z-index: 2;
+ }
+ #paperlink {
+  position: absolute; 
+  left: 41%;
+  top: 66%;
+  width: 4%;
+  height: 5%;
+  z-index: 3;
+ }
+ #computerlink {
+  z-index: 2;
+ }
+</style>
+</head>
+<body> 
+ <audio autoplay loop>
+  <source src="https://randomness69js.github.io/office/officeamb.mp3" type="audio/mpeg">
+ </audio>
+ <a id="computerlink" href="https://randomness69js.github.io/computer/index.html"> <img src="monitor.png" id="monitor"> </a>
+ <img src="https://randomness69js.github.io/office/desk.jpg" id="desk"> 
+ <a id="paperlink" href="https://randomness69js.github.io/">  </a>
+ <img src="https://randomness69js.github.io/office/paper.png" id="paper">
+ <img src="https://randomness69js.github.io/office/tag.png" id="tag" hidden>
+</body>
+<script>
+const delay=ms=>new Promise(res => setTimeout(res, ms));
+const checkaccess=async()=>{
+await delay(20);
+ref=document.referrer.includes("info");
+if (!ref){
+ document.location="/"; 
+}
+}
+checkaccess()
+if (localStorage.getItem("endingAgotten")=='true') {
+ document.getElementById("tag").hidden=false
+} else {
+ document.getElementById("tag").hidden=true
+}
+</script>
+</html>
