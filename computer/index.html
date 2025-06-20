@@ -74,6 +74,15 @@
  </div>  
 <script>
 //ILL ADD MORE CODES LATER THAT WILL REVEAL MORE SECRETS SO PLEASE WAIT.
+const delay=ms=>new Promise(res => setTimeout(res, ms));
+const checkaccess=async()=>{
+await delay(20);
+ref=document.referrer.includes("office");
+if (!ref){
+ document.location="/"; 
+}
+}
+checkaccess()
 history.pushState(null,null,location.href),window.onpopstate=function() {
  history.go(1);
  err=new Audio("https://randomness69js.github.io/computer/error.mp3")
