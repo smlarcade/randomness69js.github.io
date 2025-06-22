@@ -1,0 +1,88 @@
+<html>
+<head>
+<title> Game selector </title>
+<style>
+@font-face {
+ font-family: sillymariofont;
+ src: url(https://randomness69js.github.io/SuperMario256.ttf);
+}
+@font-face {
+ font-family: sillymariofont2;
+ src: url(https://randomness69js.github.io/SuperMarioBeta256.ttf);
+} 
+@property --grad1 {
+ syntax: '<color>';
+ initial-value: white;
+ inherits: false;
+}
+@property --grad2 {
+ syntax: '<color>';
+ initial-value: grey;
+ inherits: false;
+}
+#buttons {
+ position: absolute;
+ top: 51%;
+ left: 50%;
+ -ms-transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
+ transition-duration: 1s;
+}
+#button1 {
+ position: relative;
+ top: 0;
+ left: 0;
+ --grad1: white;
+ --grad2: lightgrey;
+ background: linear-gradient(var(--grad1), var(--grad2));
+ color: white;
+ font-family: sillymariofont2;
+ -webkit-text-stroke: 1.5px black;
+ font-size: 20px;
+ text-align: center;
+ padding: 7px 32px;
+ border-radius: 14px;
+ transition: --grad1 0.1s, --grad2 0.2s;
+}
+#button1:hover {
+ --grad1: lightgrey;
+ --grad2: grey;
+ position: relative;
+ top: 0;
+ left: 0;
+}
+#title {
+ font-family: sillymariofont;
+ font-size: 50px;
+ color: white;
+ margin-top: 0px;
+ margin-bottom: -30px;
+ -webkit-text-stroke: 3px black;
+}
+#titlediv {
+ position: absolute;
+ top: 40%;
+ left: 50%;
+ -ms-transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+<div id="titlediv">
+<center> <p id="title"> Choose a game! </p> </center>
+</div>
+<div id="buttons">
+<a href="javascript:game1()"> <button id="button1"> GAME ONE </button> </a>
+<a href="javascript:game2()"> <button id="button1"> GAME TWO </button> </a>
+</div>
+<script>
+function game1() {
+ document.location.href="https://randomness69js.github.io/game.html"
+}
+function game2() {
+ document.location.href="https://randomness69js.github.io/game2.html"
+}
+</script>
+</body>
+</html>
