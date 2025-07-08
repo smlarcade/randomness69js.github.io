@@ -1,0 +1,67 @@
+<html>
+<head>
+<title> Game selector. </title>
+<style>
+ body {
+  background: black;
+ } 
+ #desk {
+  height:100%;
+  position: absolute; 
+  width: 80%;
+  left: 10%;
+  top: 0px;
+ }
+ #tv {
+  position: absolute; 
+  left: 39.5%;
+  top: 45%;
+  width: 17%;
+  height: 25%;
+  z-index: 3;
+ }
+ #screen {
+  position: absolute; 
+  left: 43.15%;
+  top: 48.75%;
+  width: 9.5%;
+  height: 16%;
+  z-index: 1;
+ }
+ #screenframe {
+  position: absolute; 
+  left: 43.12%;
+  top: 48.75%;
+  width: 9.5%;
+  height: 16%;
+  z-index: 4;
+ }
+ #computerlink {
+  z-index: 1;
+ }
+ #tvhref {
+  position: absolute; 
+  left: 43%;
+  top: 49%;
+  width: 10%;
+  height: 17%;
+  z-index: 3;
+ }
+</style>
+</head>
+<body> 
+ <audio autoplay loop>
+  <source src="https://randomness69js.github.io/tv/sound.mp3" type="audio/mpeg">
+ </audio>
+ <img src="https://randomness69js.github.io/tv/tv.png" id="tv"> 
+ <a id="tvhref" href="#" onclick="javascript:tv();" ></a>
+ <img src="https://randomness69js.github.io/tv/static.gif" id="screen">
+ <img src="https://randomness69js.github.io/tv/desk.jpg" id="desk"> 
+</body>
+<script>
+function tv() {
+document.getElementById("tvhref").hidden=true
+document.getElementById("screen").outerHTML="<iframe id='screenframe' frameBorder='0' height='120%' src='https://randomness69js.github.io/tv/gameselector.html'></iframe>"
+}
+</script>
+</html>

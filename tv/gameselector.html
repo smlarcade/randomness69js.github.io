@@ -1,0 +1,113 @@
+<html>
+<head name="viewport" content="initial-scale=12">
+<style>
+@font-face {
+ font-family: vcrfont;
+  src: url(HomeVideo.ttf);
+}
+body {
+ height: 100%;
+ display: grid;
+ overflow: hidden;
+ background-color: blue;
+}
+img {
+  width: 100%;
+  height: auto;
+ margin: auto;
+}
+#img1 {
+ height: 20%;
+ width: 70%;
+ position: absolute;
+ left: 13.5%;
+ top: 20%;
+}
+#img2 {
+ height: 20%;
+ width: 70%;
+ transform: scaleY(135%) scaleX(75%);
+ position: absolute;
+ left: 13.5%;
+ top: 60%;
+}
+
+#img3 {
+ height: 20%;
+ width: 70%;
+ transform: scaleY(135%) scaleX(75%);
+ position: absolute;
+ left: -7.5%;
+ top: 61%;
+}
+
+#img4 {
+ height: 20%;
+ width: 70%;
+ transform: scaleY(135%) scaleX(75%);
+ position: absolute;
+ left: 37.5%;
+ top: 61%;
+}
+
+#img5 {
+ height: 20%;
+ z-index: 50;
+ width: 70%;
+ transform: scaleY(120%) scaleX(70%);
+ position: absolute;
+ left: 13.5%;
+ top: 80%;
+}
+
+</style>
+</head>
+<body>
+<img id="img1" src="https://randomness69js.github.io/tv/text1.png">
+<img id="img2" src="https://randomness69js.github.io/tv/game1.png">
+<img id="img3" onclick="javascript:left()" src="https://randomness69js.github.io/tv/left.png">
+<img id="img4" onclick="javascript:right()" src="https://randomness69js.github.io/tv/right.png">
+<img id="img5" onclick="javascript:rungame()" src="https://randomness69js.github.io/tv/rungame.png">
+</body>
+<script>
+//THIS WAY OF SETTING UP SHIT IS HORRENDOUS I KNOW.
+//I HOPE THIS MESSY CODE DOESNST MAKE ME YANDARAREDEV 2.0
+//I TRIED TO MAKE IT AS CLEAN AS I CAN
+gamenum=1
+function left(){
+ if (gamenum>1) {
+ 	gamenum-=1
+ }
+ update()
+}
+function right(){
+ if (gamenum<5) {
+ 	gamenum+=1
+ }
+ update()
+}
+//THIS WAS ORIGINALLY SUPPOSED TO REDIRECT THE WHOLE PAGE TO THE SITE, BUT IT ONLY REDIRECRTS THE IFRAME
+//SINCE THIS LOOKS COOL, IM KEEPING IT
+function rungame() {
+ if (gamenum==1) {
+  document.location.href="https://randomness69js.github.io/game.html"	
+ } else {
+ document.location.href="https://randomness69js.github.io/game"+gamenum+".html"
+ }
+}
+function update() {
+ document.getElementById("img2").src="https://randomness69js.github.io/tv/game"+gamenum+".png"
+}
+document.addEventListener("keydown", (event) => {
+switch (event.key) {
+ case "ArrowLeft":
+  left()
+ break;
+ case "ArrowRight":
+  right()
+ break;  
+}
+});
+
+</script>
+</html>
